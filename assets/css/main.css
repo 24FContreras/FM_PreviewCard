@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+html {
+  font-family: 'Outfit', Courier, monospace;
+  font-size: 16px;
+  color: #8bacda;
+}
+
+.card {
+  width: 20rem;
+  background-color: #14253d;
+  padding: 1.3rem;
+  border-radius: 15px;
+  box-sizing: border-box;
+  -webkit-box-shadow: 3px 3px 22px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 22px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card > .card-img {
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card > .card-img > img {
+  width: 100%;
+}
+
+.card > .card-img .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 255, 255, 0.5);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .5s ease;
+  cursor: pointer;
+}
+
+.card > .card-img .overlay:hover {
+  opacity: 1;
+}
+
+.card .card-body h1 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 22px;
+}
+
+.card .card-body > p {
+  line-height: 26px;
+  color: #8bacda;
+  font-weight: 300;
+  margin-top: 18px;
+}
+
+.card .card-body .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px #2f415b;
+  padding: 20px 0;
+}
+
+.card .card-body .info p {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+
+.card .card-body .info p > img {
+  height: 18px;
+  margin-right: 8px;
+}
+
+.card .card-body .info p:nth-child(1) {
+  color: #00fff7;
+  font-weight: 600;
+}
+
+.card .card-body .creator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+.card .card-body .creator > img {
+  width: 35px;
+  border: solid 1.5px white;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.card .card-body .creator span {
+  color: white;
+}
+
+.attribution {
+  margin-top: 1.5rem;
+}
+
+.attribution a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  background-color: #0d192b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.active, .card .card-body h1, .card .card-body .creator span, .attribution a {
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+.active:hover, .card .card-body h1:hover, .card .card-body .creator span:hover, .attribution a:hover, .active:focus, .card .card-body h1:focus, .card .card-body .creator span:focus, .attribution a:focus, .active:active, .card .card-body h1:active, .card .card-body .creator span:active, .attribution a:active {
+  color: #00fff7;
+}

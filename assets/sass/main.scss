@@ -1,0 +1,152 @@
+//VARIABLES
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$main-blue: hsl(217, 54%, 11%);
+$card-blue: hsl(216, 50%, 16%);
+$line-blue: hsl(215, 32%, 27%);
+
+
+//FONT
+ @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+html {
+  font-family: 'Outfit', Courier, monospace;
+  font-size: 16px;
+  color: $soft-blue;
+}
+
+//CARD
+.card{
+  width: 20rem;
+  background-color: $card-blue;
+  padding: 1.3rem;
+  border-radius: 15px;
+  box-sizing: border-box;
+  -webkit-box-shadow: 3px 3px 22px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 22px 8px rgba(0, 0, 0, 0.2);
+
+  > .card-img{
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    >img{
+      width: 100%;
+    }
+
+    .overlay{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 255, 255, 0.5);
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity .5s ease;
+      cursor: pointer;
+
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+
+  .card-body{
+
+    h1{
+      color: white;
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 22px;
+      @extend .active;
+    }
+
+    > p{
+      line-height: 26px;
+      color: $soft-blue;
+      font-weight: 300;
+      margin-top: 18px;
+    }
+
+    .info{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: solid 1px $line-blue;
+      padding: 20px 0;
+
+      p{
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+
+        >img{
+          height: 18px;
+          margin-right: 8px;
+        }
+      }
+
+      p:nth-child(1){
+        color: $cyan;
+        font-weight: 600;
+      }
+    }
+
+    .creator{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 20px;
+      font-size: 16px;
+
+      > img{
+        width: 35px;
+        border: solid 1.5px white;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+
+      span{
+        color: white;
+        @extend .active;
+      }
+    }
+  }
+}
+
+.attribution{
+  margin-top: 1.5rem;
+
+  a{
+    color: white;
+    text-decoration: none;
+    @extend .active;
+  }
+}
+
+//LAYOUT
+main {
+  background-color: $main-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+//UTILITIES
+
+.active{
+  cursor: pointer;
+  transition: color .3s ease;
+
+  &:hover, &:focus, &:active{
+    color: $cyan;
+  }
+}
