@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
-html {
-  font-family: 'Outfit', Courier, monospace;
-  font-size: 16px;
-  color: #8bacda;
-}
-
 .card {
   width: 20rem;
   background-color: #14253d;
@@ -26,7 +20,7 @@ html {
   width: 100%;
 }
 
-.card > .card-img .overlay {
+.card > .card-img .link {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -42,7 +36,7 @@ html {
   cursor: pointer;
 }
 
-.card > .card-img .overlay:hover {
+.card > .card-img .link:hover {
   opacity: 1;
 }
 
@@ -100,21 +94,15 @@ html {
   margin-right: 15px;
 }
 
-.card .card-body .creator span {
-  color: white;
-}
-
 .attribution {
   margin-top: 1.5rem;
 }
 
-.attribution a {
-  color: white;
-  text-decoration: none;
-}
-
-main {
+body {
   background-color: #0d192b;
+  font-family: 'Outfit', Courier, monospace;
+  font-size: 16px;
+  color: #8bacda;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,11 +110,13 @@ main {
   height: 100vh;
 }
 
-.active, .card .card-body h1, .card .card-body .creator span, .attribution a {
+.active, .card .card-body h1 a, .card .card-body .creator a, .attribution a {
+  color: white;
+  text-decoration: none;
   cursor: pointer;
   transition: color .3s ease;
 }
 
-.active:hover, .card .card-body h1:hover, .card .card-body .creator span:hover, .attribution a:hover, .active:focus, .card .card-body h1:focus, .card .card-body .creator span:focus, .attribution a:focus, .active:active, .card .card-body h1:active, .card .card-body .creator span:active, .attribution a:active {
+.active:hover, .card .card-body h1 a:hover, .card .card-body .creator a:hover, .attribution a:hover, .active:focus, .card .card-body h1 a:focus, .card .card-body .creator a:focus, .attribution a:focus, .active:active, .card .card-body h1 a:active, .card .card-body .creator a:active, .attribution a:active {
   color: #00fff7;
 }

@@ -9,11 +9,6 @@ $line-blue: hsl(215, 32%, 27%);
 //FONT
  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
-html {
-  font-family: 'Outfit', Courier, monospace;
-  font-size: 16px;
-  color: $soft-blue;
-}
 
 //CARD
 .card{
@@ -35,7 +30,7 @@ html {
       width: 100%;
     }
 
-    .overlay{
+    .link{
       position: absolute;
       top: 50%;
       left: 50%;
@@ -63,7 +58,10 @@ html {
       font-size: 22px;
       font-weight: 600;
       margin-top: 22px;
-      @extend .active;
+
+      a{
+        @extend .active;
+      }
     }
 
     > p{
@@ -112,8 +110,7 @@ html {
         margin-right: 15px;
       }
 
-      span{
-        color: white;
+      a{
         @extend .active;
       }
     }
@@ -124,15 +121,16 @@ html {
   margin-top: 1.5rem;
 
   a{
-    color: white;
-    text-decoration: none;
     @extend .active;
   }
 }
 
 //LAYOUT
-main {
+body {
   background-color: $main-blue;
+  font-family: 'Outfit', Courier, monospace;
+  font-size: 16px;
+  color: $soft-blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,6 +141,8 @@ main {
 //UTILITIES
 
 .active{
+  color: white;
+  text-decoration: none;
   cursor: pointer;
   transition: color .3s ease;
 
